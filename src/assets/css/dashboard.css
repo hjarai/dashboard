@@ -826,3 +826,20 @@
 .documentation .dropdown .dropdown-menu.show {
     transform: translate3d(0, 39px, 0) !important;
 }
+
+/* Use this selector to override the line style on a given series */
+.ct-series-a .ct-line {
+    stroke: #9e4055;
+  }
+
+  .ct-series-b .ct-line {
+    stroke: #9ebe80;
+  }
+  .ct-series-a .ct-point {
+    stroke: #9e4055;
+  }
+
+  .ct-series-b .ct-point {
+    stroke: #9ebe80;
+  }
+

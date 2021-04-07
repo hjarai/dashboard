@@ -5,6 +5,7 @@ import { Route, Redirect } from 'react-router-dom'
 import Dashboard from './Dashboard'
 import Test from './Test'
 import Test2 from './Test2'
+import Layout from './Layout'
 
 class Main extends Component {
   render() {
@@ -17,6 +18,8 @@ class Main extends Component {
           <Redirect from='*' to='/test' />
           <Route path="/test2" component={Test2} /> 
           <Redirect from='*' to='/test2' />
+          <Route path="/layout" component={Layout} /> 
+          <Redirect from='*' to='/layout' />
         <Footer />
       </div>
     )
