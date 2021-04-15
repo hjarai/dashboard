@@ -4,12 +4,27 @@ import React, { Component } from 'react'
 import Test from './Test';
 import Dial from './Dial';
 import Words from './Words';
+//import data from '../data/last_one.txt';
 
 
 class Layout extends Component {
 
-  
+  constructor(){
+    super();
+    this.state ={
+      range: 'semester',
+    };
+  };
+
+
   render() {
+    //const all_data = data;
+    //console.log(all_data)
+    // const selected_data = (selected) =>{
+    //   if(selected= "week") {
+    //     all_data
+    //   }
+    // }
 
     return (
       <div className="content">
@@ -21,10 +36,10 @@ class Layout extends Component {
                 <Dial/>
                 <Words/>
                 <div className="card-body ">
-                <button onClick={() => console.log("week")}>This week</button>
-                <button onClick={() => console.log("month")}>This Month</button>
-                <button onClick={() => console.log("semester")}>This Semester</button>
-                <Test/>
+                <button onClick={() => this.setState({range: "week"})}>This week</button>
+                <button onClick={() => this.setState({range: "month"})}>This Month</button>
+                <button onClick={() => this.setState({range: "semester"})}>This Semester</button>
+                <Test />
                 </div>
               </div>
             </div>
