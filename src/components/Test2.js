@@ -2,20 +2,22 @@ import React from 'react';
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // core components
-import data_json from '../data/filtered.json'
+//import data_json from '../data/filtered.json'
 
-const data = data_json;
+//const data = data_json;
 
 // Let's put a sequence number aside so we can use it in the event callbacks
 var seq = 0,
   delays = 80,
   durations = 500;
 
-export default function Test(){
+export default function Test({data}){
     let dataLine = {
-        labels: ["Thurs", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"],
-        series: [Object.values(data.Senti_Sum), Object.values(data.Tensi_Sum)]
+        labels: data.map(element => element.date),
+        series: [data.map(element => element.score)]
       };
+
+  console.log(dataLine.series)
     
   return (
     <div className="col-md-8">
@@ -123,11 +125,11 @@ export default function Test(){
             
         } }}
         />
+
       </div>
       <div className="card-footer ">
         <div className="legend">
-          <i className="fa fa-circle text-info"></i> Happiness/Sadness
-          <i className="fa fa-circle text-danger"></i> Relax/Stress
+          <i className="fa fa-circle text-danger"></i> Happiness/Sadness
       </div>
         <hr />
         <div className="stats">

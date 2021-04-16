@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "chartist": "^0.11.4",
+    "jsonlines": "^0.1.1",
     "react": "^17.0.2",
     "react-chartist": "^0.14.4",
     "react-d3-speedometer": "^1.0.1",

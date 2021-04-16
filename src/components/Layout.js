@@ -1,30 +1,33 @@
 import React, { Component } from 'react'
 //import ChartistGraph from 'react-chartist'
 //import data_json from '../data/filtered.json'
-import Test from './Test';
+import Test2 from './Test2';
 import Dial from './Dial';
 import Words from './Words';
-//import data from '../data/last_one.txt';
-
+import data_file from '../data/last_one.json'
 
 class Layout extends Component {
 
   constructor(){
     super();
     this.state ={
-      range: 'semester',
+      range: 'week',
+      data: data_file,
     };
   };
 
 
   render() {
-    //const all_data = data;
-    //console.log(all_data)
-    // const selected_data = (selected) =>{
-    //   if(selected= "week") {
-    //     all_data
-    //   }
-    // }
+    const data_length = this.state.data.length;
+    const filtered_data = (period) => {
+      if (period === 'week'){
+        return this.state.data.slice(data_length-7, data_length)
+      } else if (period ==='month'){
+        return this.state.data.slice(data_length-30, data_length);
+      } else {
+        return this.state.data
+      }
+    }
 
     return (
       <div className="content">
@@ -39,7 +42,7 @@ class Layout extends Component {
                 <button onClick={() => this.setState({range: "week"})}>This week</button>
                 <button onClick={() => this.setState({range: "month"})}>This Month</button>
                 <button onClick={() => this.setState({range: "semester"})}>This Semester</button>
-                <Test />
+                <Test2 data={filtered_data(this.state.range)}/>
                 </div>
               </div>
             </div>
