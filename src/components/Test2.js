@@ -25,8 +25,6 @@ export default function Test({data}){
       labels: data.map(element => element.date),
       series: [data.map(element => element.score)]
     };
-
-  console.log(dataLine.series)
     
   return (
     <div className="col-md-10">

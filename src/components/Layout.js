@@ -29,6 +29,8 @@ class Layout extends Component {
       }
     }
 
+    const dial_value = filtered_data(this.state.range).map(element => element.score).reduce((a, b) => (a + b))/filtered_data(this.state.range).length;
+
     return (
       <div className="content">
         <div className="container-fluid">
@@ -36,8 +38,9 @@ class Layout extends Component {
 
             <div className="col-md-8">
               <div className="card">
+                
                 <div className="rowC">
-                  <Dial data = {this.state.data[data_length-1].score}/>
+                  <Dial data = {dial_value}/>
                   <Words data={filtered_data(this.state.range)}/>
                 </div>
                 <div className="card-body ">
