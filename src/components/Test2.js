@@ -12,19 +12,28 @@ var seq = 0,
   durations = 500;
 
 export default function Test({data}){
-    let dataLine = {
-        labels: data.map(element => element.date),
-        series: [data.map(element => element.score)]
-      };
+  const range = () => {
+    if (data.length < 8) {
+      return "One week"
+    } else if (data.length < 31) {
+      return "One month"
+    } else {
+      return "One Semester"
+    }
+  }
+  let dataLine = {
+      labels: data.map(element => element.date),
+      series: [data.map(element => element.score)]
+    };
 
   console.log(dataLine.series)
     
   return (
-    <div className="col-md-8">
+    <div className="col-md-10">
     <div className="card">
       <div className="card-header ">
         <h4 className="card-title">Twitter Analysis</h4>
-        <p className="card-category">1 week tracking</p>
+        <p className="card-category">{range} tracking</p>
       </div>
       <div className="card-body ">
         <ChartistGraph

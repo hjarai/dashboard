@@ -2811,6 +2811,7 @@ Copyright (c) 2015 Daniel Eden
     filter: alpha(opacity=0);
 }
 
+
 .card .filter .btn {
     position: relative;
     top: 50%;
@@ -2840,7 +2841,7 @@ Copyright (c) 2015 Daniel Eden
 
 .card .card-header {
     padding: 15px 15px 0;
-    background-color: #FFFFFF;
+    background-color: #9bc1bc;
     border-bottom: none !important;
 }
 
@@ -2848,7 +2849,7 @@ Copyright (c) 2015 Daniel Eden
 .card label {
     font-size: 14px;
     font-weight: 400;
-    color: #9A9A9A;
+    color: #32161f;
     margin-bottom: 0px;
 }
 
@@ -2906,6 +2907,7 @@ Copyright (c) 2015 Daniel Eden
 .card .card-footer div {
     display: inline-block;
 }
+
 
 .card .author {
     font-size: 12px;
@@ -3053,9 +3055,12 @@ Copyright (c) 2015 Daniel Eden
 
 .card2 {
     width: 40%;
-    outline: 1px solid transparent;
-    border:rgba(0, 0, 0, 0.68)
+    /* outline: 1px solid transparent;
+    border:rgba(0, 0, 0, 0.68); */
+    border-radius: 4px;
 }
+
+.rowC{display:flex; flex-direction:row;}
 
 .ct-label {
     fill: rgba(0, 0, 0, 0.4);
