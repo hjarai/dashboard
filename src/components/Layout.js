@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import Test2 from './Test2';
 import Dial from './Dial';
 import Words from './Words';
-import data_file from '../data/last_one.json'
+// import data_file from '../data/last_one.json'
 
 class Layout extends Component {
 
@@ -12,16 +12,30 @@ class Layout extends Component {
     super();
     this.state ={
       range: 'week',
-      data: data_file,
+      data: [],
     };
   };
 
+  componentDidMount() {
+    // fetch('last_one.txt')
+    fetch('https://www.cs.middlebury.edu/~ckoster/data/fur_hirona.txt')
+        .then(res => res.text())
+        .then(body => {
+            const lines = body.split("\n");
+            const data_array = lines.filter(line=>line!=="").map((line) => JSON.parse(line))
+            // try catch 
+            this.setState({data:data_array});
+        });
+  }
+
 
   render() {
+
     const data_length = this.state.data.length;
+
     const filtered_data = (period) => {
       if (period === 'week'){
-        return this.state.data.slice(data_length-7, data_length-1)
+        return this.state.data.slice(data_length-7, data_length-1);
       } else if (period ==='month'){
         return this.state.data.slice(data_length-30, data_length-1);
       } else {
@@ -29,7 +43,8 @@ class Layout extends Component {
       }
     }
 
-    const dial_value = filtered_data(this.state.range).map(element => element.score).reduce((a, b) => (a + b))/filtered_data(this.state.range).length;
+    const dial_value = filtered_data(this.state.range).map(element => element.score).reduce((a, b) => (a + b), 5)/filtered_data(this.state.range).length;
+
 
     return (
       <div className="content">

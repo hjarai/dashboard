@@ -25,6 +25,10 @@ export default function Test({data}){
       labels: data.map(element => element.date),
       series: [data.map(element => element.score)]
     };
+
+    //labels Mon Tues Wed Thrus Fri if week
+    // labels every five days if month
+    // every month if semester or of all time
     
   return (
     <div className="col-md-10">

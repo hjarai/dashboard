@@ -4,6 +4,7 @@ import Footer from './Footer'
 import { Route, Redirect } from 'react-router-dom'
 import Info from './Info'
 import Layout from './Layout'
+// import Try_fetching from './Try_fetching'
 
 class Main extends Component {
   render() {
@@ -14,6 +15,8 @@ class Main extends Component {
           <Redirect from='*' to='/info' />
           <Route path="/layout" component={Layout} /> 
           <Redirect from='*' to='/layout' />
+          {/* <Route path="/try_fetching" component={Try_fetching} /> 
+          <Redirect from='*' to='/try_fetching' /> */}
         <Footer />
       </div>
     )
