@@ -201,7 +201,7 @@ h1 .subtitle {
 
 .text-danger,
 .text-danger:hover {
-    color: #FF4A55 !important;
+    color: #9e4055 !important;
 }
 
 /*     General overwrite     */
@@ -2781,7 +2781,10 @@ Copyright (c) 2015 Daniel Eden
     border-radius: 4px;
     background-color: #FFFFFF;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
+
+
 
 .card .card-image {
     width: 100%;

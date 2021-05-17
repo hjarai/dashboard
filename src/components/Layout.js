@@ -13,18 +13,18 @@ class Layout extends Component {
     this.state ={
       range: 'week',
       data: [],
+      last: "today"
     };
   };
 
   componentDidMount() {
-    // fetch('last_one.txt')
-    fetch('https://www.cs.middlebury.edu/~ckoster/data/fur_hirona.txt')
+    fetch(`/~ckoster/data/fur_hirona.txt`)
         .then(res => res.text())
         .then(body => {
             const lines = body.split("\n");
             const data_array = lines.filter(line=>line!=="").map((line) => JSON.parse(line))
-            // try catch 
             this.setState({data:data_array});
+            this.setState({last:data_array.slice(this.state.data.length-1)[0].date})
         });
   }
 
@@ -35,9 +35,11 @@ class Layout extends Component {
 
     const filtered_data = (period) => {
       if (period === 'week'){
-        return this.state.data.slice(data_length-7, data_length-1);
+        return this.state.data.slice(data_length-7, data_length);
       } else if (period ==='month'){
-        return this.state.data.slice(data_length-30, data_length-1);
+        return this.state.data.slice(data_length-30, data_length);
+      } else if (period ==='semester'){
+        return this.state.data.slice(data_length-90, data_length);
       } else {
         return this.state.data
       }
@@ -48,10 +50,11 @@ class Layout extends Component {
 
     return (
       <div className="content">
-        <div className="container-fluid">
+        <div className="cardoutside-fluid">
+
           <div className="row">
 
-            <div className="col-md-8">
+            <div className="col-md-12">
               <div className="card">
                 
                 <div className="rowC">
@@ -62,7 +65,8 @@ class Layout extends Component {
                   <button onClick={() => this.setState({range: "week"})}>This week</button>
                   <button onClick={() => this.setState({range: "month"})}>This Month</button>
                   <button onClick={() => this.setState({range: "semester"})}>This Semester</button>
-                  <Test2 data={filtered_data(this.state.range)}/>
+                  <button onClick={() => this.setState({range: "2020"})}>Since 2020</button>
+                  <Test2 data={filtered_data(this.state.range)} last={this.state.last}/>
                 </div>
               </div>
             </div>
