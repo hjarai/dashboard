@@ -18,7 +18,7 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    fetch(`/~ckoster/data/fur_hirona.txt`)
+    fetch(`https://www.cs.middlebury.edu/~ckoster/data/fur_hirona.txt`)
         .then(res => res.text())
         .then(body => {
             const lines = body.split("\n");

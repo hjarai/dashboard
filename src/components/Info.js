@@ -29,7 +29,7 @@ By visualizing these findings on a dashboard, students can check in on the trend
 
             <div className="card">
               <div className="card-header ">
-                <h4 className="card-title">Our App</h4>
+                <h4 className="card-title">Questions</h4>
                 <p className="card-category">What if I don’t agree with the mood dial?
 </p>
               </div>
@@ -49,11 +49,10 @@ Lastly, if you think that our assessment is incorrect, please Tweet at us (@Midd
                 <p className="card-category">Who are behind MiddMood?</p>
               </div>
               <div className="card-body ">
-                <img src={hirona} alt="hirona" width="200" height="200" />
-                <img src={culton} alt="culton" width="200" height="200" />
-                <p>Hirona ('22) and Culton ('21.5) are Middlebury Computer Science students enrolled in the CS701 Senior Seminar with Prof. Vaccari—MiddMood is our final project!
-
-</p>
+              <p>Hirona ('22) and Culton ('21.5) are Middlebury Computer Science students enrolled in the CS701 Senior Seminar with Prof. Vaccari—MiddMood is our final project!</p>
+                <img src={hirona} alt="hirona"  height="200" />
+                <img src={culton} alt="culton"  height="200" />
+                
 
               </div>
             </div>
