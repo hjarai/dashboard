@@ -6,6 +6,8 @@ import Dial from './Dial';
 import Words from './Words';
 // import data_file from '../data/last_one.json'
 
+const server = "https://www.cs.middlebury.edu"
+
 class Layout extends Component {
 
   constructor(){
@@ -18,14 +20,16 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    fetch(`https://www.cs.middlebury.edu/~ckoster/data/fur_hirona.txt`)
+    fetch(`${server}/~ckoster/data/fur_hirona.txt`)
         .then(res => res.text())
         .then(body => {
             const lines = body.split("\n");
             const data_array = lines.filter(line=>line!=="").map((line) => JSON.parse(line))
             this.setState({data:data_array});
             this.setState({last:data_array.slice(this.state.data.length-1)[0].date})
-        });
+        })
+        .catch(err => console.error(err))
+        ;
   }
 
 
