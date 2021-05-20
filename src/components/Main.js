@@ -4,7 +4,6 @@ import Footer from './Footer'
 import { Route, Redirect } from 'react-router-dom'
 import Info from './Info'
 import Layout from './Layout'
-// import Try_fetching from './Try_fetching'
 
 class Main extends Component {
   render() {
