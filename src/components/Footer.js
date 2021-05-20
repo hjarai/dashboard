@@ -9,14 +9,14 @@ class Footer extends Component {
           <nav>
             <ul className="footer-menu">
               <li>
-                <Link to="/">
+                <Link to="/Layout">
                   Home
                 </Link>
               </li>
 
             </ul>
             <p className="copyright text-center">
-              © 2019
+              © 2021
           </p>
           </nav>
         </div>

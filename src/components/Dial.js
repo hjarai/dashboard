@@ -1,9 +1,7 @@
 import React from 'react'
-// import { Donut } from 'react-dial-knob'
 import ReactSpeedometer from "react-d3-speedometer"
 
 export default function Dial({data}) {
-    // const [value, setValue] = useState(0)
     return ( 
         <div className="col-md-4">
             <div className="card">
